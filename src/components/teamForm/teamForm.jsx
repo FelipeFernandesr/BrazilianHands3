@@ -3,7 +3,7 @@ import './index.scss'
 
 const TeamForm = () => {
   return (
-    <div>teamForm</div>
+    <div>teste ok</div>
   )
 }
 

@@ -3,7 +3,7 @@ import './index.scss'
 
 const CardService = () => {
   return (
-    <div>cardService</div>
+    <div>teste ok</div>
   )
 }
 

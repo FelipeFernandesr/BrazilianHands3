@@ -3,7 +3,7 @@ import './index.scss'
 
 const NavBar = () => {
   return (
-    <div>navBar</div>
+    <div>teste ok</div>
   )
 }
 

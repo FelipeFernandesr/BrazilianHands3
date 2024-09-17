@@ -3,7 +3,7 @@ import './index.scss'
 
 const CardFeedback = () => {
   return (
-    <div>cardFeedback</div>
+    <div>teste ok</div>
   )
 }
 

@@ -3,7 +3,7 @@ import './index.scss'
 
 const FeedbackCarrosel = () => {
   return (
-    <div>feedbackCarrosel</div>
+    <div>teste ok</div>
   )
 }
 

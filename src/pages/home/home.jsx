@@ -3,7 +3,7 @@ import './index.scss'
 
 const Home = () => {
   return (
-    <div>home</div>
+    <div>Teste</div>
   )
 }
 
