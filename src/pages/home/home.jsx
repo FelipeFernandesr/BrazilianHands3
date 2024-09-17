@@ -1,10 +1,10 @@
 import React from 'react'
 import './index.scss'
 
-const Header = () => {
+const Home = () => {
   return (
-    <div>Header</div>
+    <div>home</div>
   )
 }
 
-export default Header
+export default Home
