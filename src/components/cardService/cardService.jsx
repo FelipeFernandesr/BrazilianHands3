@@ -1,9 +1,18 @@
 import React from 'react'
 import './index.scss'
 
-const CardService = () => {
+const CardService = ({img, title, descr, text}) => {
   return (
-    <div>teste ok</div>
+    <div className='card'>
+      <div>
+        <img src={img} alt={title} />
+        <div>
+          <h1>{title}</h1>
+          <p>{descr}</p>
+        </div>
+      </div>
+      <p>{text}</p>
+    </div>
   )
 }
 
