@@ -9,7 +9,7 @@ const OurServices = () => {
         <h1>Explore Our Exceptional Services!</h1>
         <p>Welcome to our comprehensive service page, where you can discover how we can assist with all your needs. From transforming your home with professional cleaning and vibrant paint to perfecting your garden and providing expert garment adjustments, we are dedicated to delivering top-notch results.</p>
       </div>
-      <div>
+      <div className='services_cards'>
         <CardService
           img = "/services1.svg" 
           title = "Residential Cleaning"

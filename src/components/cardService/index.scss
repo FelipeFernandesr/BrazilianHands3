@@ -1,7 +1,16 @@
 @use '../../styles/var' as *;
 
+*{
+    background-color: red;
+    }
 
-
-.card{
+.card_service{
+    display: flex;
+    flex-direction: column;
     background-color: $secondaryBackgroundColor;
+    border: .3rem solid red;
+}
+
+.img_card{
+    display: flex;
 }

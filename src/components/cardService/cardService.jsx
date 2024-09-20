@@ -3,10 +3,10 @@ import './index.scss'
 
 const CardService = ({img, title, descr, text}) => {
   return (
-    <div className='card'>
-      <div>
+    <div className="card_service">
+      <div className="img_card">
         <img src={img} alt={title} />
-        <div>
+        <div className="title_card">
           <h1>{title}</h1>
           <p>{descr}</p>
         </div>
