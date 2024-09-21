@@ -14,7 +14,7 @@ const schema = yup.object().shape({
   AddressNumber: yup.string().required('Number is required'),
   Services: yup.string().required('Services are required'),
 });
-
+//campos a serem preenchidos
 const fields = [
   { name: 'Contact', type: 'text', label: 'Contact', required: true, className: 'contact-field'},
   { name: 'Email', type: 'email', label: 'Email', required: true, className: 'email-field'},
