@@ -1,9 +1,11 @@
-import React from 'react'
+// import React from 'react'
 import './index.scss'
-
-const Home = () => {
+import NavBar from '../../components/navBar/navBar.jsx'
+function Home() {
   return (
-    <div>Teste</div>
+    <div>
+      <NavBar />
+    </div>
   )
 }
 
