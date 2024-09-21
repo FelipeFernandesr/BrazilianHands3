@@ -1,1 +1,7 @@
 @use '../../styles/var' as *;
+
+.Team_Group{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
