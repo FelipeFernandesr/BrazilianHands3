@@ -15,19 +15,17 @@ const schema = yup.object().shape({
   Services: yup.string().required('Services are required'),
 });
 
-const fields = [
-  { name: 'Contact', type: 'text', label: 'Contact', required: true, className: 'contact-field'},
-  { name: 'Email', type: 'email', label: 'Email', required: true, className: 'email-field'},
-  { name: 'Phone', type: 'tel', label: 'Phone', required: true, className: 'phone-field' },
-  { name: 'Eircode', type: 'text', label: 'Eircode', required: true, className: 'eircode-field' },
-  { name: 'Address', type: 'text', label: 'Address', required: true, className: 'address-field'},
-  { name: 'AddressNumber', type: 'text', label: 'Number', required: true, className: 'number-field'},
-  { name: 'Complement', type: 'text', label: 'Complement', className: 'complement-field'},
-  { name: 'Services', type: 'text', label: 'Services', required: true, className: 'services-field'},
-];
-
 const TeamForm = () => {
-  const [formData, setFormData] = useState(fields.reduce((acc, field) => ({ ...acc, [field.name]: '' }), {}));
+  const [formData, setFormData] = useState({
+    Contact: '',
+    Email: '',
+    Phone: '',
+    Eircode: '',
+    Address: '',
+    AddressNumber: '',
+    Complement: '',
+    Services: '',
+  });
   const [errors, setErrors] = useState({});
 
   const onInputChange = (e) => {
@@ -64,7 +62,16 @@ const TeamForm = () => {
 
         if (response.ok) {
           alert('Form submitted successfully');
-          setFormData(fields.reduce((acc, field) => ({ ...acc, [field.name]: '' }), {}));
+          setFormData({
+            Contact: '',
+            Email: '',
+            Phone: '',
+            Eircode: '',
+            Address: '',
+            AddressNumber: '',
+            Complement: '',
+            Services: '',
+          });
         } else {
           alert('Error adding form data to Google Sheets');
         }
@@ -75,23 +82,113 @@ const TeamForm = () => {
   };
 
   return (
-    <section className='Form_Team'>
+    <section className='Team'>
       <form onSubmit={onSubmit}>
-        {fields.map(({ name, type, label, required, className }) => (
-          <div className='Form_Team_Grop' key={name}>
-            <label htmlFor={name}>{label}</label>
-            <input
-              type={type}
-              id={name}
-              name={name}
-              value={formData[name]}
-              onChange={onInputChange}
-              required={required}
-              className={className}
-            />
-            {errors[name] && <p className='error'>{errors[name]}</p>}
+        <div className='Team_Group'>
+          <div className='Team_Group_Contact'>
+            <label htmlFor='Contact'>Contact</label>
+            <div>
+              <input
+                type='text'
+                id='Contact'
+                name='Contact'
+                value={formData.Contact}
+                onChange={onInputChange}
+              />
+              {errors.Contact && <p className='error'>{errors.Contact}</p>}
+            </div>
           </div>
-        ))}
+          <div className='Team_Group_Email'>
+            <label htmlFor='Email'>Email</label>
+            <div>
+              <input
+                type='email'
+                id='Email'git 
+                name='Email'
+                value={formData.Email}
+                onChange={onInputChange}
+              />
+              {errors.Email && <p className='error'>{errors.Email}</p>}
+            </div>
+          </div>
+          <div className='Team_Group_Phone'>
+            <label htmlFor='Phone'>Phone</label>
+            <div>
+              <input
+                type='tel'
+                id='Phone'
+                name='Phone'
+                value={formData.Phone}
+                onChange={onInputChange}
+              />
+              {errors.Phone && <p className='error'>{errors.Phone}</p>}
+            </div>
+          </div>
+          <div className='Team_Group_Eircode'>
+            <label htmlFor='Eircode'>Eircode</label>
+            <div>
+              <input
+                type='text'
+                id='Eircode'
+                name='Eircode'
+                value={formData.Eircode}
+                onChange={onInputChange}
+              />
+              {errors.Eircode && <p className='error'>{errors.Eircode}</p>}
+            </div>
+          </div>
+          <div className='Team_Group_Address'>
+            <label htmlFor='Address'>Address</label>
+            <div>
+              <input
+                type='text'
+                id='Address'
+                name='Address'
+                value={formData.Address}
+                onChange={onInputChange}
+              />
+              {errors.Address && <p className='error'>{errors.Address}</p>}
+            </div>
+          </div>
+          <div className='Team_Group_Number'>
+            <label htmlFor='AddressNumber'>Number</label>
+            <div>
+              <input
+                type='text'
+                id='AddressNumber'
+                name='AddressNumber'
+                value={formData.AddressNumber}
+                onChange={onInputChange}
+              />
+              {errors.AddressNumber && <p className='error'>{errors.AddressNumber}</p>}
+            </div>
+          </div>
+          <div className='Team_Group_Complement'>
+            <label htmlFor='Complement'>Complement</label>
+            <div className='Form_Team_Grop'>
+              <input
+                type='text'
+                id='Complement'
+                name='Complement'
+                value={formData.Complement}
+                onChange={onInputChange}
+              />
+            </div>
+          </div>
+          <div className='Team_Group_Services'>
+            <label htmlFor='Services'>Services</label>
+            <div className='Form_Team_Grop'>
+              <input
+                type='text'
+                id='Services'
+                name='Services'
+                value={formData.Services}
+                onChange={onInputChange}
+              />
+              {errors.Services && <p className='error'>{errors.Services}</p>}
+            </div>
+          </div>
+        </div>
         <button type="submit">Submit my request</button>
       </form>
     </section>
