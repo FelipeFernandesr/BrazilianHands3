@@ -88,7 +88,7 @@ const TeamForm = () => {
           <div className='Team_Group_Contact'>
             <label htmlFor='Contact'>Contact</label>
             <div>
-              <input
+              <input className='_Group_Contact_i'
                 type='text'
                 id='Contact'
                 name='Contact'

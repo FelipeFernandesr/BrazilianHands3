@@ -8,6 +8,7 @@ const JoinOurTeam = () => {
     <div>teste
       <div>
         <TeamForm/>
+        <br/>
       </div>
     </div>
   )
