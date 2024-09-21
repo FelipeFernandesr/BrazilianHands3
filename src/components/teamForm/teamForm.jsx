@@ -1,95 +1,70 @@
 import React, { useState } from 'react';
+import * as yup from 'yup';
 import './index.scss';
 
-const TeamForm = () => {
-  const [formData, setFormData] = useState({
-    Contact: '',
-    Email: '',
-    Phone: '',
-    Eircode: '',
-    Address: '',
-    AddressNumber: '',
-    Complement: '',
-    Services: '',
-  });
+const schema = yup.object().shape({
+  Contact: yup.string().required('Name is required'),
+  Email: yup.string().required('Email is required').matches(
+    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+    'Email must be a valid format (e.g., name@example.com)'
+  ),
+  Phone: yup.string().required('Phone number is required'),
+  Eircode: yup.string().required('Eircode is required'),
+  Address: yup.string().required('Address is required'),
+  AddressNumber: yup.string().required('Number is required'),
+  Services: yup.string().required('Services are required'),
+});
 
+const fields = [
+  { name: 'Contact', type: 'text', label: 'Contact', required: true, className: 'contact-field'},
+  { name: 'Email', type: 'email', label: 'Email', required: true, className: 'email-field'},
+  { name: 'Phone', type: 'tel', label: 'Phone', required: true, className: 'phone-field' },
+  { name: 'Eircode', type: 'text', label: 'Eircode', required: true, className: 'eircode-field' },
+  { name: 'Address', type: 'text', label: 'Address', required: true, className: 'address-field'},
+  { name: 'AddressNumber', type: 'text', label: 'Number', required: true, className: 'number-field'},
+  { name: 'Complement', type: 'text', label: 'Complement', className: 'complement-field'},
+  { name: 'Services', type: 'text', label: 'Services', required: true, className: 'services-field'},
+];
+
+const TeamForm = () => {
+  const [formData, setFormData] = useState(fields.reduce((acc, field) => ({ ...acc, [field.name]: '' }), {}));
   const [errors, setErrors] = useState({});
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+  const onInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value.trim() }));
+    setErrors(prev => ({ ...prev, [name]: '' }));
   };
 
-  const validate = () => {
-    const tempErrors = {};
-    let isValid = true;
-
-    if (!formData.Contact.trim()) {
-      tempErrors.Contact = 'Name is required';
-      isValid = false;
+  const validate = async () => {
+    try {
+      await schema.validate(formData, { abortEarly: false });
+      setErrors({});
+      return true;
+    } catch (validationErrors) {
+      const formattedErrors = validationErrors.inner.reduce((acc, error) => {
+        acc[error.path] = error.message;
+        return acc;
+      }, {});
+      setErrors(formattedErrors);
+      return false;
     }
-
-    const emailPattern = /\S+@\S+\.\S+/;
-    if (!emailPattern.test(formData.Email)) {
-      tempErrors.Email = 'Email invalid';
-      isValid = false;
-    }
-
-    if (!formData.Phone.trim()) {
-      tempErrors.Phone = 'Phone number is required';
-      isValid = false;
-    }
-
-    if (!formData.Eircode.trim()) {
-      tempErrors.Eircode = 'Eircode is required';
-      isValid = false;
-    }
-
-    if (!formData.Address.trim()) {
-      tempErrors.Address = 'Address is required';
-      isValid = false;
-    }
-
-    if (!formData.AddressNumber.trim()) {
-      tempErrors.AddressNumber = 'Number is required';
-      isValid = false;
-    }
-
-    if (!formData.Services.trim()) {
-      tempErrors.Services = 'Services are required';
-      isValid = false;
-    }
-
-    setErrors(tempErrors);
-    return isValid;
   };
 
-  const handleSubmit = async (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    if (validate()) {
+    const isValid = await validate();
+    if (isValid) {
       try {
         const response = await fetch('https://api.sheetmonkey.io/form/uyWHi5PnxssqqGdNRyVw3o', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),
         });
 
         if (response.ok) {
           alert('Form submitted successfully');
-          setFormData({
-            Contact: '',
-            Email: '',
-            Phone: '',
-            Eircode: '',
-            Address: '',
-            AddressNumber: '',
-            Complement: '',
-            Services: '',
-          });
+          setFormData(fields.reduce((acc, field) => ({ ...acc, [field.name]: '' }), {}));
         } else {
           alert('Error adding form data to Google Sheets');
         }
@@ -101,102 +76,22 @@ const TeamForm = () => {
 
   return (
     <section className='Form_Team'>
-      <form onSubmit={handleSubmit}>
-        <div className='Form_Team_Grop'>
-          <label htmlFor='Contact'>Contact</label>
-          <input
-            type='text'
-            id='Contact'
-            name='Contact'
-            value={formData.Contact}
-            onChange={handleChange}
-            placeholder='Enter your name'
-          />
-          {errors.Contact && <p className='error'>{errors.Contact}</p>}
-        </div>
-        <div className='Form_Team_Grop'>
-          <label htmlFor='Email'>Email</label>
-          <input
-            type='email'
-            id='Email'
-            name='Email'
-            value={formData.Email}
-            onChange={handleChange}
-            placeholder='Enter your Email'
-          />
-          {errors.Email && <p className='error'>{errors.Email}</p>}
-        </div>
-        <div className='Form_Team_Grop'>
-          <label htmlFor='Phone'>Phone</label>
-          <input
-            type='tel'
-            id='Phone'
-            name='Phone'
-            value={formData.Phone}
-            onChange={handleChange}
-            placeholder='Enter your phone number'
-          />
-          {errors.Phone && <p className='error'>{errors.Phone}</p>}
-        </div>
-        <div className='Form_Team_Grop'>
-          <label htmlFor='Eircode'>Eircode</label>
-          <input
-            type='text'
-            id='Eircode'
-            name='Eircode'
-            value={formData.Eircode}
-            onChange={handleChange}
-            placeholder='Enter your Eircode'
-          />
-          {errors.Eircode && <p className='error'>{errors.Eircode}</p>}
-        </div>
-        <div className='Form_Team_Grop'>
-          <label htmlFor='Address'>Address</label>
-          <input
-            type='text'
-            id='Address'
-            name='Address'
-            value={formData.Address}
-            onChange={handleChange} // Campo editável
-            placeholder='Enter your Address'
-          />
-          {errors.Address && <p className='error'>{errors.Address}</p>}
-        </div>
-        <div className='Form_Team_Grop'>
-          <label htmlFor='AddressNumber'>Number</label>
-          <input
-            type='text'
-            id='AddressNumber'
-            name='AddressNumber'
-            value={formData.AddressNumber}
-            onChange={handleChange}
-            placeholder='Enter your house number'
-          />
-          {errors.AddressNumber && <p className='error'>{errors.AddressNumber}</p>}
-        </div>
-        <div className='Form_Team_Grop'>
-          <label htmlFor='Complement'>Complement</label>
-          <input
-            type='text'
-            id='Complement'
-            name='Complement'
-            value={formData.Complement}
-            onChange={handleChange}
-            placeholder='Enter complement of your address'
-          />
-        </div>
-        <div className='Form_Team_Grop'>
-          <label htmlFor='Services'>Services</label>
-          <input
-            type='text'
-            id='Services'
-            name='Services'
-            value={formData.Services}
-            onChange={handleChange}
-            placeholder='Inform the services provided'
-          />
-          {errors.Services && <p className='error'>{errors.Services}</p>}
-        </div>
+      <form onSubmit={onSubmit}>
+        {fields.map(({ name, type, label, required, className }) => (
+          <div className='Form_Team_Grop' key={name}>
+            <label htmlFor={name}>{label}</label>
+            <input
+              type={type}
+              id={name}
+              name={name}
+              value={formData[name]}
+              onChange={onInputChange}
+              required={required}
+              className={className}
+            />
+            {errors[name] && <p className='error'>{errors[name]}</p>}
+          </div>
+        ))}
         <button type="submit">Submit my request</button>
       </form>
     </section>
