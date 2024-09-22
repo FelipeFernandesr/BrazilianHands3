@@ -1,1 +1,9 @@
-@use '../../styles/var' as *;
+// @use '../../styles/var' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.image-de-fundo{
+    height: calc(100vh - 70px);
+    background: center / cover no-repeat url(../../../public/fundo-abstrato-desfocado.jpg);
+}

@@ -1,4 +1,4 @@
-@use '../../styles/var' as *;
+// @use '../../styles/var' as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -50,7 +50,7 @@ nav{
     width: 60px;
 }
 
-img, h1{
+img, .text-logo{
     z-index: 1;
     background-color: #1B4883;
 
@@ -70,10 +70,10 @@ ul a{
 
 }
 
-.image-de-fundo{
-    height: calc(100vh - 70px);
-    background: center / cover no-repeat url(../../../public/fundo-abstrato-desfocado.jpg);
-}
+// .image-de-fundo{
+//     height: calc(100vh - 70px);
+//     background: center / cover no-repeat url(../../../public/fundo-abstrato-desfocado.jpg);
+// }
 
 .hamburguer{
     border: none;
