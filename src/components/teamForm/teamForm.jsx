@@ -26,6 +26,16 @@ const TeamForm = () => {
     Complement: '',
     Services: '',
   });
+  const [formData, setFormData] = useState({
+    Contact: '',
+    Email: '',
+    Phone: '',
+    Eircode: '',
+    Address: '',
+    AddressNumber: '',
+    Complement: '',
+    Services: '',
+  });
   const [errors, setErrors] = useState({});
 
   const onInputChange = (e) => {
@@ -72,6 +82,16 @@ const TeamForm = () => {
             Complement: '',
             Services: '',
           });
+          setFormData({
+            Contact: '',
+            Email: '',
+            Phone: '',
+            Eircode: '',
+            Address: '',
+            AddressNumber: '',
+            Complement: '',
+            Services: '',
+          });
         } else {
           alert('Error adding form data to Google Sheets');
         }
@@ -82,6 +102,7 @@ const TeamForm = () => {
   };
 
   return (
+    <section className='Team'>
     <section className='Team'>
       <form onSubmit={onSubmit}>
         <div className='Team_Group'>
@@ -188,6 +209,7 @@ const TeamForm = () => {
               {errors.Services && <p className='error'>{errors.Services}</p>}
             </div>
           </div>
+        </div>
         </div>
         <button type="submit">Submit my request</button>
       </form>
