@@ -1,9 +1,16 @@
-import React from 'react'
-import './index.scss'
+import React from 'react';
+import './index.scss';
+import TeamForm from '../../components/teamForm/teamForm'
 
 const JoinOurTeam = () => {
+  
   return (
-    <div>joinOurTeam</div>
+    <div>teste
+      <div>
+        <TeamForm/>
+        <br/>
+      </div>
+    </div>
   )
 }
 
