@@ -26,16 +26,7 @@ const TeamForm = () => {
     Complement: '',
     Services: '',
   });
-  const [formData, setFormData] = useState({
-    Contact: '',
-    Email: '',
-    Phone: '',
-    Eircode: '',
-    Address: '',
-    AddressNumber: '',
-    Complement: '',
-    Services: '',
-  });
+  
   const [errors, setErrors] = useState({});
 
   const onInputChange = (e) => {
@@ -82,34 +73,24 @@ const TeamForm = () => {
             Complement: '',
             Services: '',
           });
-          setFormData({
-            Contact: '',
-            Email: '',
-            Phone: '',
-            Eircode: '',
-            Address: '',
-            AddressNumber: '',
-            Complement: '',
-            Services: '',
-          });
         } else {
-          alert('Error adding form data to Google Sheets');
+          alert('Error adding form data to the server');
         }
       } catch (error) {
-        alert('Error adding form data to Google Sheets');
+        alert('Error adding form data to the server');
       }
     }
   };
 
   return (
     <section className='Team'>
-    <section className='Team'>
       <form onSubmit={onSubmit}>
         <div className='Team_Group'>
           <div className='Team_Group_Contact'>
             <label htmlFor='Contact'>Contact</label>
             <div>
-              <input className='_Group_Contact_i'
+              <input
+                className='_Group_Contact_i'
                 type='text'
                 id='Contact'
                 name='Contact'
@@ -186,7 +167,7 @@ const TeamForm = () => {
           </div>
           <div className='Team_Group_Complement'>
             <label htmlFor='Complement'>Complement</label>
-            <div className='Form_Team_Grop'>
+            <div>
               <input
                 type='text'
                 id='Complement'
@@ -198,7 +179,7 @@ const TeamForm = () => {
           </div>
           <div className='Team_Group_Services'>
             <label htmlFor='Services'>Services</label>
-            <div className='Form_Team_Grop'>
+            <div>
               <input
                 type='text'
                 id='Services'
@@ -209,7 +190,6 @@ const TeamForm = () => {
               {errors.Services && <p className='error'>{errors.Services}</p>}
             </div>
           </div>
-        </div>
         </div>
         <button type="submit">Submit my request</button>
       </form>
