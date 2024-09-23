@@ -6,6 +6,7 @@ import MissionVision from './pages/missionVision/missionVision'
 import OurServices from './pages/ourServices/ourServices'
 import ContactUS from './pages/contactUS/contactUS'
 import JoinOurTeam from './pages/joinOurTeam/joinOurTeam'
+import AdmPainel from './pages/admPainel/admPainel'
 
 import {
   createBrowserRouter,
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/joinOurTeam",
     element: <JoinOurTeam/>,
+  },
+  {
+    path: "/1234",
+    element: <AdmPainel/>,
   },
 ]);
 
