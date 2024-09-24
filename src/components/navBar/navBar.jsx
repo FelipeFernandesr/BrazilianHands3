@@ -84,9 +84,11 @@ const NavBar = () => {
           </ul>
         </nav>
       </header>
-      {/* <main className="image-de-fundo"></main> */}
     </div>
   );
 };
 
 export default NavBar;
+
+
+// <main className="image-de-fundo"></main>

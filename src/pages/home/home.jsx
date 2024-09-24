@@ -8,7 +8,6 @@ function Home() {
       <div>
         <h1 className='image-de-fundo'>
           home1
-          SobreNos1
         </h1>
 
       </div>
