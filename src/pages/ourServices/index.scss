@@ -62,3 +62,42 @@
     }
 
 }
+
+
+
+@media (min-width: 768px){
+    .services_banner{
+        margin: 2.375rem auto;
+        width: 70%;
+
+        & h1{
+            font-size: 4.25rem;
+        }
+        & p{
+            font-size: 3.5rem;
+        }
+    }
+
+    .services_cards{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        margin: 6.25rem;
+    }
+    
+
+    .services_footer{
+        margin: 2.375rem auto;
+        width: 70%;
+
+        & h2{
+            font-size: 3.75rem;
+        }
+        & p{
+            font-size: 3.0rem;
+        }
+
+    }
+}
