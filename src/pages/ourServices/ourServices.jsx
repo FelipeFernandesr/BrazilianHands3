@@ -5,7 +5,7 @@ import CardService from '../../components/cardService/cardService'
 const OurServices = () => {
   return (
     <div>
-      <div>
+      <div className='services_banner'>
         <h1>Explore Our Exceptional Services!</h1>
         <p>Welcome to our comprehensive service page, where you can discover how we can assist with all your needs. From transforming your home with professional cleaning and vibrant paint to perfecting your garden and providing expert garment adjustments, we are dedicated to delivering top-notch results.</p>
       </div>
@@ -59,10 +59,10 @@ const OurServices = () => {
         />
         </div>
       </div>
-      <div>
+      <div className='services_footer'>
         <h2>Contact Us</h2>
         <p>Get in touch with our talented and dedicated team today!</p>
-        <p> Aqui virá um botão!!!!!</p>
+        <p className='botaoEspecial'> Click here to be directed to our form - será um botão</p>
       </div>
     </div>
   )
