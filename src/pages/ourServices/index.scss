@@ -1,9 +1,98 @@
 @use '../../styles/var' as *;
 
-
-.services_cards{
+.services_banner {
     display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2.375rem 2rem;
+    text-align: center;
+
+    & h1 {
+        font-size: 1.5rem;
+        font-weight: $font-bold;
+        margin-bottom: 2rem;
+    }
+
+    & p {
+        font-size: 0.875rem;
+    }
+}
+
+.services_cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 6.25rem;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+
+.card_service {
+    width: 100%;
+    margin: 1rem;
+
+    @media (min-width: 768px) {
+        width: calc(50% - 2rem);
+    }
+}
+
+.services_footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2.375rem 2rem;
+    text-align: center;
+
+    & h2 {
+        font-size: 1.875rem;
+        font-weight: $font-bold;
+        margin-bottom: 2rem;
+    }
+
+    & p {
+        font-size: 1.4375rem;
+        margin-bottom: 2rem;
+    }
+
+    & .botaoEspecial {
+        background-color: $secondaryBlue;
+        border-radius: 1.875rem;
+        color: $primaryFontColor;
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .services_banner {
+        margin: 2.375rem auto;
+        width: 70%;
+
+        & h1 {
+            font-size: 4.25rem;
+        }
+
+        & p {
+            font-size: 3.5rem;
+        }
+    }
+
+    .services_footer {
+        margin: 2.375rem auto;
+        width: 70%;
+
+        & h2 {
+            font-size: 3.75rem;
+        }
+
+        & p {
+            font-size: 3.0rem;
+        }
+    }
 }
