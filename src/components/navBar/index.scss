@@ -5,6 +5,8 @@
     padding: 0;
     background-color: $primaryBlue;
     font-family: $font-semibold;
+    height: 7vw;
+
 
     ul {
         display: flex;
@@ -12,9 +14,9 @@
         list-style: none;
 
         a {
-            font-size: 10px;
+            font-size: 1vw;
             color: $primaryFontColor;
-            padding-block: 16px;
+            padding-block: 1.5vw;
             background-color: $primaryBlue;
             text-decoration: none;
             opacity: 1; 
@@ -24,17 +26,17 @@
 
     header {
         background-color: $primaryBlue;
-        padding-inline: 16px;
+        padding-inline: 3vw;
 
-        nav {
-            height: 70px;
+        nav {  
+            height: 7vw;
             display: flex;
             justify-content: space-between;
             align-items: center;
             background-color: $primaryBlue;
 
             .logo {
-                width: 180px;
+                width: 16vw;
                 display: flex;
                 background-color: $primaryBlue;
             }
@@ -54,7 +56,13 @@
     }
 
     @media (max-width: 820px) {
+        .nav{
+            height: 20vw;
 
+            .logo {
+                width: 40vw;
+            }
+        }
         .hamburguer::after,
         .hamburguer::before {
             content: "";
