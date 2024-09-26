@@ -1,10 +1,13 @@
 import React from 'react'
 import './index.scss'
-import Footer from '../../components/footer/footer'
+import NavBar from '../../components/navBar/navBar.jsx'
 
-const Home = () => {
+
+function Home() {
   return (
-    <div>home</div>
+    <div>
+      <NavBar />
+    </div>
   )
 }
 

@@ -1,9 +1,12 @@
-import React from 'react'
 import './index.scss'
+import NavBar from '../../components/navBar/navBar.jsx'
 
 const AboutUs = () => {
   return (
-    <div>aboutUs</div>
+    <div>
+      <NavBar />
+      <>teste sobre nos</>
+    </div>
   )
 }
 

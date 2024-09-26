@@ -1,1 +1,122 @@
 @use '../../styles/var' as *;
+
+.Header {
+    margin: 0;
+    padding: 0;
+    background-color: $primaryBlue;
+    font-family: $font-semibold;
+
+    ul {
+        display: flex;
+        gap: 32px;
+        list-style: none;
+
+        a {
+            font-size: 10px;
+            color: $primaryFontColor;
+            padding-block: 16px;
+            background-color: $primaryBlue;
+            text-decoration: none;
+            opacity: 1; 
+            transition: opacity 0.5s ease; 
+        }
+    }
+
+    header {
+        background-color: $primaryBlue;
+        padding-inline: 16px;
+
+        nav {
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $primaryBlue;
+
+            .logo {
+                width: 180px;
+                display: flex;
+                background-color: $primaryBlue;
+            }
+
+            .hamburguer {
+                border: none;
+                background: none;
+                border-top: 3px solid $primaryFontColor;
+                cursor: pointer;
+                z-index: 1;
+            }
+
+            .nav-list {
+                background-color: $primaryBlue;
+            }
+        }
+    }
+
+    @media (max-width: 820px) {
+
+        .hamburguer::after,
+        .hamburguer::before {
+            content: "";
+            display: block;
+            width: 30px;
+            height: 3px;
+            background: $primaryFontColor;
+            margin-top: 5px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        ul {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: $primaryBlue;
+            clip-path: circle(100px at 90% -15%);
+            transition: clip-path 1s ease-out;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            gap: 0;
+            pointer-events: none; // Desativado no estado inicial
+        }
+
+        ul a {
+            font-size: 24px;
+            background-color: $primaryBlue;
+        }
+
+        nav.active ul {
+            clip-path: circle(1500px at 90% -15%);
+            pointer-events: auto; // Ativar interação no estado ativo
+        }
+
+        nav.active ul a {
+            opacity: 1;
+        }
+
+        nav.active .hamburguer {
+            position: fixed;
+            top: 26px;
+            right: 16px;
+            border-top-color: transparent;
+        }
+
+        nav.active .hamburguer::before {
+            transform: rotate(135deg);
+        }
+
+        nav.active .hamburguer::after {
+            transform: rotate(-135deg);
+            top: -7px;
+        }
+
+        // adição de atraso para a opacidade sumir após a animação do clip-path
+        nav:not(.active) ul a {
+            transition: opacity 0.3s ease 0.5s; // Atraso de 0.5s para fechar junto com a clip-path
+            opacity: 1;
+        }
+    }
+}
