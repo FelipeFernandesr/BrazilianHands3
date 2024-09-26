@@ -1,10 +1,27 @@
 @use '../../styles/var' as *;
 
-
 .container {
     padding-top: 7vw; // Mantendo o padding-top para a navbar fixa
 
     .container_Itens {
+        button {
+            background-color: $secondaryBlue;
+            border: none;
+            color: $primaryFontColor;
+            font-weight: $font-bold;
+            font-size: 1.5vw;
+            height: 4vw;
+
+            &:hover {
+                background-color: $hoverBlue;
+                box-shadow: 2px 5px 0px 0px $shadowBlue;
+                transform: translateY(-2px);
+                transition-duration: 0.4s;
+                cursor: pointer;
+            }
+        }
+
+
         &_Section1 {
             background-image: url('../../../public/Section1Desktop.svg');
             background-position: center;
@@ -51,14 +68,8 @@
 
                 button {
                     margin-top: 8vw;
-                    background-color: $secondaryBlue;
-                    border: none;
                     border-radius: 1vw;
-                    color: $primaryFontColor;
                     width: 16vw;
-                    height: 4vw;
-                    font-weight: $font-bold;
-                    font-size: 1.5vw;
                 }
             }
 
@@ -107,14 +118,8 @@
                     }
 
                     button {
-                        background-color: $secondaryBlue;
-                        border: none;
                         border-radius: 1vw;
-                        color: $primaryFontColor;
                         width: 30vw;
-                        height: 4vw;
-                        font-weight: $font-bold;
-                        font-size: 1.5vw;
                     }
                 }
 
@@ -130,7 +135,162 @@
             background-image: url('../../../public/Section3Desktop.svg');
             background-position: center;
             background-repeat: repeat-x;
-            height: 900px;
+            height: 45vw;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+
+            button {
+                margin-top: 5vw;
+                border-radius: 2vw;
+                width: 25vw;
+            }
+
+            &_Content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                color: $primaryFontColor;
+                width: 60vw;
+                gap: 5vw;
+
+                h2 {
+                    font-size: 3.3vw;
+                    font-weight: $font-bold;
+                }
+
+                p {
+                    font-size: 2.8vw;
+                    font-weight: $font-regular;
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-top: 15vw;
+
+        .container_Itens {
+            button {
+                font-size: 4.5vw;
+                height: 10vw;
+                border-radius: 5vw;
+            }
+
+
+            &_Section1 {
+                background-image: url('../../../public/Section1Mobile.svg');
+                height: 100vw;
+
+                &_Content {
+                    gap: 3vw;
+                    margin-left: 10vw;
+                    width: 80vw;
+                    gap: 8vw;
+
+                    &_1 {
+                        img {
+                            width: 16vw;
+                        }
+
+                        h2 {
+                            font-size: 2.8vw;
+                        }
+                    }
+
+                    &_2 {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5vw;
+
+                        h1 {
+                            font-size: 7vw;
+                        }
+
+                        p {
+                            font-size: 5.4vw;
+                        }
+                    }
+
+
+                    button {
+                        margin-top: 6vw;
+                        width: 40vw;
+                    }
+                }
+
+
+            }
+
+            &_Section2 {
+                height: 200vw;
+                justify-content: center;
+
+                &_display {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10vw;
+
+                    button {
+                        width: 90vw;
+                    }
+
+                    &_Content {
+                        gap: 8vw;
+                        width: 80vw;
+
+                        &_text {
+                            gap: 2.8vw;
+
+                            h3 {
+                                font-size: 4vw;
+                            }
+
+                            p {
+                                font-size: 3.5vw;
+                            }
+                        }
+                    }
+
+                    img {
+                        width: 90vw;
+                    }
+
+                }
+
+            }
+
+            &_Section3 {
+                background-image: url('../../../public/Section2Mobile.svg');
+                height: 110vw;
+
+                button {
+                    margin-top: 10vw;
+                    width: 45vw;
+                }
+
+                &_Content {
+
+                    width: 80vw;
+                    gap: 15vw;
+                    text-align: left;
+
+                    h2 {
+                        font-size: 7vw;
+                    }
+
+                    p {
+                        font-size: 5.3vw;
+                    }
+                }
+            }
+
         }
     }
 }
