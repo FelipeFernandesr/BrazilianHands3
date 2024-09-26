@@ -5,5 +5,15 @@
   padding: 0px;
 
   font-family: Montserrat;
+}
+html {
+  overflow-y: auto; // Permite a rolagem vertical
+  &::-webkit-scrollbar {
+    display: none; // Oculta a barra de rolagem no Chrome/Safari
+  }
+}
 
+body {
+  overflow-y: auto; // Permite a rolagem vertical
+  scrollbar-width: none; // Oculta a barra de rolagem no Firefox
 }
