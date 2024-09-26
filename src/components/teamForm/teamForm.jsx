@@ -192,7 +192,7 @@ const TeamForm = () => {
             </div>
           </div>
         </div>
-        <button type="submit"><Link to='/'/>Submit my request</button>
+        <button type="submit"><Link to='/rt'/>Submit my request</button>
       </form>
     </section>
   );

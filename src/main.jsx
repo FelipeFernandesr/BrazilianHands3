@@ -7,41 +7,46 @@ import OurServices from './pages/ourServices/ourServices'
 import ContactUS from './pages/contactUS/contactUS'
 import JoinOurTeam from './pages/joinOurTeam/joinOurTeam'
 import AdmPainel from './pages/admPainel/admPainel'
-
+import ReturnTeam from './pages/returnTeam/returnTeam'
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
 import './index.scss'
 
+
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>,
+    element: <Home />,
   },
   {
     path: "/aboutUS",
-    element: <AboutUS/>,
+    element: <AboutUS />,
   },
   {
     path: "/missionVision",
-    element: <MissionVision/>,
+    element: <MissionVision />,
   },
   {
     path: "/ourServices",
-    element: <OurServices/>,
+    element: <OurServices />,
   },
   {
     path: "/contactUS",
-    element: <ContactUS/>,
+    element: <ContactUS />,
   },
   {
     path: "/joinOurTeam",
-    element: <JoinOurTeam/>,
+    element: <JoinOurTeam />,
+  },
+  {
+    path: "/rt",
+    element: <ReturnTeam />,
   },
   {
     path: "/1234",
-    element: <AdmPainel/>,
+    element: <AdmPainel />,
   },
 ]);
 
