@@ -79,7 +79,15 @@ function Home() {
             </div>
 
           </section>
-          <section className='container_Itens_Section3'></section>
+          <section className='container_Itens_Section3'>
+            <div>
+              <h2></h2>
+              <p></p>
+            </div>
+            <div>
+              <button></button>
+            </div>
+          </section>
         </div>
 
       </div>
