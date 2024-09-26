@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.scss';
-import CardService from '../../components/cardService/CardService';
+import CardService from '../../components/cardService/cardService.jsx';
 
 const services = [
   {
