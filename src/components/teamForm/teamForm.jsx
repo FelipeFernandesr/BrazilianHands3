@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import * as yup from 'yup';
 import './index.scss';
 
@@ -191,7 +192,7 @@ const TeamForm = () => {
             </div>
           </div>
         </div>
-        <button type="submit">Submit my request</button>
+        <button type="submit"><Link to='/'/>Submit my request</button>
       </form>
     </section>
   );

@@ -1,15 +1,15 @@
 import React from 'react';
 import './index.scss';
 import TeamForm from '../../components/teamForm/teamForm'
+import NavBar from '../../components/navBar/navBar';
 
 const JoinOurTeam = () => {
   
   return (
-    <div>teste
-      <div>
+    <div>
+        <NavBar/>
         <TeamForm/>
-        <br/>
-      </div>
+
     </div>
   )
 }
