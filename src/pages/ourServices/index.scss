@@ -1,13 +1,6 @@
 @use '../../styles/var' as *;
 
-
-
-*{
-    margin: 0;
-    padding: 0;
-}
-
-.services_banner{
+.services_banner {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,27 +8,41 @@
     margin: 2.375rem 2rem;
     text-align: center;
 
-    & h1{
+    & h1 {
         font-size: 1.5rem;
         font-weight: $font-bold;
-        margin-bottom: 2rem;    
+        margin-bottom: 2rem;
     }
 
-    & p{
+    & p {
         font-size: 0.875rem;
     }
 }
 
-.services_cards{
+.services_cards {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 6.25rem;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 }
 
+.card_service {
+    width: 100%;
+    margin: 1rem;
 
-.services_footer{
+    @media (min-width: 768px) {
+        width: calc(50% - 2rem);
+    }
+}
+
+.services_footer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,61 +50,49 @@
     margin: 2.375rem 2rem;
     text-align: center;
 
-    & h2{
+    & h2 {
         font-size: 1.875rem;
         font-weight: $font-bold;
-        margin-bottom: 2rem;    
+        margin-bottom: 2rem;
     }
 
-    & p{
+    & p {
         font-size: 1.4375rem;
         margin-bottom: 2rem;
     }
 
-    & .botaoEspecial{
+    & .botaoEspecial {
         background-color: $secondaryBlue;
-        border-radius:  1.875rem;
+        border-radius: 1.875rem;
         color: $primaryFontColor;
         padding: 1rem;
     }
-
 }
 
-
-
-@media (min-width: 768px){
-    .services_banner{
+@media (min-width: 768px) {
+    .services_banner {
         margin: 2.375rem auto;
         width: 70%;
 
-        & h1{
+        & h1 {
             font-size: 4.25rem;
         }
-        & p{
+
+        & p {
             font-size: 3.5rem;
         }
     }
 
-    .services_cards{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        align-items: center;
-        margin: 6.25rem;
-    }
-    
-
-    .services_footer{
+    .services_footer {
         margin: 2.375rem auto;
         width: 70%;
 
-        & h2{
+        & h2 {
             font-size: 3.75rem;
         }
-        & p{
+
+        & p {
             font-size: 3.0rem;
         }
-
     }
 }
