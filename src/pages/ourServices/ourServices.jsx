@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.scss';
 import CardService from '../../components/cardService/cardService.jsx';
+import NavBar from '../../components/navBar/navBar.jsx';
 
 const services = [
   {
@@ -44,29 +45,32 @@ const services = [
 const OurServices = () => {
   return (
     <div>
-      <div className='services_banner'>
-        <h1>Explore Our Exceptional Services!</h1>
-        <p>Welcome to our comprehensive service page, where you can discover how we can assist with all your needs. From transforming your home with professional cleaning and vibrant paint to perfecting your garden and providing expert garment adjustments, we are dedicated to delivering top-notch results.</p>
-      </div>
+      <NavBar/>
+      <div className='services_page'>
+        <div className='services_banner'>
+          <h1>Explore Our Exceptional Services!</h1>
+          <p>Welcome to our comprehensive service page, where you can discover how we can assist with all your needs. From transforming your home with professional cleaning and vibrant paint to perfecting your garden and providing expert garment adjustments, we are dedicated to delivering top-notch results.</p>
+        </div>
 
-      <div className='services_cards'>
-        {services.map((service, index) => (
-          <div className='Cards' key={index}>
-            <CardService
-              img={service.img}
-              title={service.title}
-              descr={service.descr}
-              text={service.text}
-            />
-          </div>
-        ))}
-      </div>
+        <div className='services_cards'>
+          {services.map((service, index) => (
+            <div className='Cards' key={index}>
+              <CardService
+                img={service.img}
+                title={service.title}
+                descr={service.descr}
+                text={service.text}
+              />
+            </div>
+          ))}
+        </div>
 
-      <div className='services_footer'>
-        <h2>Contact Us</h2>
-        <p>Get in touch with our talented and dedicated team today!</p>
-        <button className='botaoEspecial'>Click here to be directed to our form</button>
-      </div>
+        <div className='services_footer'>
+          <h2>Contact Us</h2>
+          <p>Get in touch with our talented and dedicated team today!</p>
+          <button className='botaoEspecial'>Click here to be directed to our form</button>
+        </div>
+        </div>
     </div>
   );
 };
