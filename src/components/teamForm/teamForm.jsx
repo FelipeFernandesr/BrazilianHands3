@@ -95,7 +95,7 @@ const TeamForm = () => {
         <p>
           Work with us. Please provide your details below and describe <br />
           the services you offer to join our team <br />
-          <br />
+          <br /> 
           Join Brazilian Hands Cooperative: Where Your Skills Meet <br />
           Opportunity!
         </p>
