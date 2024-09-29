@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import * as yup from 'yup';
+import * as yup from "yup";
+
+
 import './index.scss';
 
 const schema = yup.object().shape({
@@ -84,117 +86,133 @@ const TeamForm = () => {
   };
 
   return (
-    <section className='Team'>
-      <form onSubmit={onSubmit}>
-        <div className='Team_Group'>
-          <div className='Team_Group_Contact'>
-            <label htmlFor='Contact'>Contact</label>
-            <div>
-              <input
-                className='_Group_Contact_i'
-                type='text'
-                id='Contact'
-                name='Contact'
-                value={formData.Contact}
-                onChange={onInputChange}
-              />
-              {errors.Contact && <p className='error'>{errors.Contact}</p>}
+    <div>
+      <section className='text-JoinOurTeam'>
+        <h1>
+          Join Our Team <br />
+          <br />
+        </h1>
+        <p>
+          Work with us. Please provide your details below and describe <br />
+          the services you offer to join our team <br />
+          <br />
+          Join Brazilian Hands Cooperative: Where Your Skills Meet <br />
+          Opportunity!
+        </p>
+      </section>
+
+      <section className='Team'>
+        <form onSubmit={onSubmit}>
+          <div className='Team_Group'>
+            <div className='Team_Group_Contact'>
+              <label htmlFor='Contact'>Contact</label>
+              <div>
+                <input
+                  className='_Group_Contact_i'
+                  type='text'
+                  id='Contact'
+                  name='Contact'
+                  value={formData.Contact}
+                  onChange={onInputChange}
+                />
+                {errors.Contact && <p className='error'>{errors.Contact}</p>}
+              </div>
+            </div>
+            <div className='Team_Group_Email'>
+              <label htmlFor='Email'>Email</label>
+              <div>
+                <input
+                  type='email'
+                  id='Email'
+                  name='Email'
+                  value={formData.Email}
+                  onChange={onInputChange}
+                />
+                {errors.Email && <p className='error'>{errors.Email}</p>}
+              </div>
+            </div>
+            <div className='Team_Group_Phone'>
+              <label htmlFor='Phone'>Phone</label>
+              <div>
+                <input
+                  type='tel'
+                  id='Phone'
+                  name='Phone'
+                  value={formData.Phone}
+                  onChange={onInputChange}
+                />
+                {errors.Phone && <p className='error'>{errors.Phone}</p>}
+              </div>
+            </div>
+            <div className='Team_Group_Eircode'>
+              <label htmlFor='Eircode'>Eircode</label>
+              <div>
+                <input
+                  type='text'
+                  id='Eircode'
+                  name='Eircode'
+                  value={formData.Eircode}
+                  onChange={onInputChange}
+                />
+                {errors.Eircode && <p className='error'>{errors.Eircode}</p>}
+              </div>
+            </div>
+            <div className='Team_Group_Address'>
+              <label htmlFor='Address'>Address</label>
+              <div>
+                <input
+                  type='text'
+                  id='Address'
+                  name='Address'
+                  value={formData.Address}
+                  onChange={onInputChange}
+                />
+                {errors.Address && <p className='error'>{errors.Address}</p>}
+              </div>
+            </div>
+            <div className='Team_Group_Number'>
+              <label htmlFor='AddressNumber'>Number</label>
+              <div>
+                <input
+                  type='text'
+                  id='AddressNumber'
+                  name='AddressNumber'
+                  value={formData.AddressNumber}
+                  onChange={onInputChange}
+                />
+                {errors.AddressNumber && <p className='error'>{errors.AddressNumber}</p>}
+              </div>
+            </div>
+            <div className='Team_Group_Complement'>
+              <label htmlFor='Complement'>Complement</label>
+              <div>
+                <input
+                  type='text'
+                  id='Complement'
+                  name='Complement'
+                  value={formData.Complement}
+                  onChange={onInputChange}
+                />
+              </div>
+            </div>
+            <div className='Team_Group_Services'>
+              <label htmlFor='Services'>Services</label>
+              <div>
+                <input
+                  type='text'
+                  id='Services'
+                  name='Services'
+                  value={formData.Services}
+                  onChange={onInputChange}
+                />
+                {errors.Services && <p className='error'>{errors.Services}</p>}
+              </div>
             </div>
           </div>
-          <div className='Team_Group_Email'>
-            <label htmlFor='Email'>Email</label>
-            <div>
-              <input
-                type='email'
-                id='Email'
-                name='Email'
-                value={formData.Email}
-                onChange={onInputChange}
-              />
-              {errors.Email && <p className='error'>{errors.Email}</p>}
-            </div>
-          </div>
-          <div className='Team_Group_Phone'>
-            <label htmlFor='Phone'>Phone</label>
-            <div>
-              <input
-                type='tel'
-                id='Phone'
-                name='Phone'
-                value={formData.Phone}
-                onChange={onInputChange}
-              />
-              {errors.Phone && <p className='error'>{errors.Phone}</p>}
-            </div>
-          </div>
-          <div className='Team_Group_Eircode'>
-            <label htmlFor='Eircode'>Eircode</label>
-            <div>
-              <input
-                type='text'
-                id='Eircode'
-                name='Eircode'
-                value={formData.Eircode}
-                onChange={onInputChange}
-              />
-              {errors.Eircode && <p className='error'>{errors.Eircode}</p>}
-            </div>
-          </div>
-          <div className='Team_Group_Address'>
-            <label htmlFor='Address'>Address</label>
-            <div>
-              <input
-                type='text'
-                id='Address'
-                name='Address'
-                value={formData.Address}
-                onChange={onInputChange}
-              />
-              {errors.Address && <p className='error'>{errors.Address}</p>}
-            </div>
-          </div>
-          <div className='Team_Group_Number'>
-            <label htmlFor='AddressNumber'>Number</label>
-            <div>
-              <input
-                type='text'
-                id='AddressNumber'
-                name='AddressNumber'
-                value={formData.AddressNumber}
-                onChange={onInputChange}
-              />
-              {errors.AddressNumber && <p className='error'>{errors.AddressNumber}</p>}
-            </div>
-          </div>
-          <div className='Team_Group_Complement'>
-            <label htmlFor='Complement'>Complement</label>
-            <div>
-              <input
-                type='text'
-                id='Complement'
-                name='Complement'
-                value={formData.Complement}
-                onChange={onInputChange}
-              />
-            </div>
-          </div>
-          <div className='Team_Group_Services'>
-            <label htmlFor='Services'>Services</label>
-            <div>
-              <input
-                type='text'
-                id='Services'
-                name='Services'
-                value={formData.Services}
-                onChange={onInputChange}
-              />
-              {errors.Services && <p className='error'>{errors.Services}</p>}
-            </div>
-          </div>
-        </div>
-        <button type="submit"><Link to='/rt'/>Submit my request</button>
-      </form>
-    </section>
+          <button type="submit"><Link to='/rt'/>Submit my request</button>
+        </form>
+      </section>
+    </div>
   );
 };
 
