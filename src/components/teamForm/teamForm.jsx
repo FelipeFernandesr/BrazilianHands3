@@ -26,6 +26,7 @@ const TeamForm = () => {
     Complement: '',
     Services: '',
   });
+  
   const [errors, setErrors] = useState({});
 
   const onInputChange = (e) => {
@@ -54,7 +55,7 @@ const TeamForm = () => {
     const isValid = await validate();
     if (isValid) {
       try {
-        const response = await fetch('https://api.sheetmonkey.io/form/uyWHi5PnxssqqGdNRyVw3o', {
+        const response = await fetch('http://localhost:5000/api/form', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),
@@ -73,10 +74,10 @@ const TeamForm = () => {
             Services: '',
           });
         } else {
-          alert('Error adding form data to Google Sheets');
+          alert('Error adding form data to the server');
         }
       } catch (error) {
-        alert('Error adding form data to Google Sheets');
+        alert('Error adding form data to the server');
       }
     }
   };
@@ -89,6 +90,7 @@ const TeamForm = () => {
             <label htmlFor='Contact'>Contact</label>
             <div>
               <input
+                className='_Group_Contact_i'
                 type='text'
                 id='Contact'
                 name='Contact'
@@ -103,7 +105,7 @@ const TeamForm = () => {
             <div>
               <input
                 type='email'
-                id='Email'git 
+                id='Email'
                 name='Email'
                 value={formData.Email}
                 onChange={onInputChange}
@@ -165,7 +167,7 @@ const TeamForm = () => {
           </div>
           <div className='Team_Group_Complement'>
             <label htmlFor='Complement'>Complement</label>
-            <div className='Form_Team_Grop'>
+            <div>
               <input
                 type='text'
                 id='Complement'
@@ -177,7 +179,7 @@ const TeamForm = () => {
           </div>
           <div className='Team_Group_Services'>
             <label htmlFor='Services'>Services</label>
-            <div className='Form_Team_Grop'>
+            <div>
               <input
                 type='text'
                 id='Services'
@@ -196,3 +198,5 @@ const TeamForm = () => {
 };
 
 export default TeamForm;
+
+

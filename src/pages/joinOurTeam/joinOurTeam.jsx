@@ -5,7 +5,7 @@ import TeamForm from '../../components/teamForm/teamForm'
 const JoinOurTeam = () => {
   
   return (
-    <div>teste
+    <div>
       <div>
         <TeamForm/>
       </div>
