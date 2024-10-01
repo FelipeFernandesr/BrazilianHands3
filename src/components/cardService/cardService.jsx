@@ -5,7 +5,7 @@ const CardService = ({img, title, descr, text}) => {
   return (
     <div className="card_service">
       <div className="img_card">
-        <div>
+        <div className='img_card_1'>
           <h1>{title}</h1>
           <p>{descr}</p>  
         </div>
