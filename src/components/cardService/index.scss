@@ -3,93 +3,76 @@
 .card_service{
     display: flex;
     flex-direction: column;
+    gap: 1vw;
     background-color: $secondaryBackgroundColor;
-    width: 21.188rem;
-    height: 25.563rem;
-    margin: 3.125rem auto;
-    border-radius: 1.25rem;
-    padding: .5rem .5rem;
-    & img{
-        width: 100px;
-        height: 95px;
-        margin-left: 0.2rem;
-    }
-    
-    & h1{
-        font-size: 1.125rem;
-        font-weight: $font-bold;
-        text-align: center;
-    }
-
-    & p{
-        font-size: 1.125rem;
-        font-weight: $font-semibold;
-        margin-bottom: .5rem;
-        text-align: center;
-        padding: .2rem .2rem;
-    }
-
-    & .text_card{
-        font-weight: $font-regular;
-        font-size: 1rem;
-
-    }
-}
-
-.img_card{
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    padding: .5rem 2rem;
-}
-
-
-
-
-@media (min-width: 768px) {
-
-    .card_service{
-        width: 46.875rem;
-        height: 30.563rem;
-        margin: 3.125rem auto;
-        border-radius: 1.25rem;
-        padding: 1.5rem 1.5rem;
-
-        & img{
-            width: 150px;
-            height: 145px;
-            margin-left: 0.2rem;
-        }
-        
-        & h1{
-            font-size: 2rem;
-            font-weight: $font-bold;
-            text-align: center;
-        }
-    
-        & p{
-            font-size: 1.75rem;
-            font-weight: $font-semibold;
-            text-align: center;
-            padding: .2rem .2rem;
-        }
-    
-        & .text_card{
-            font-weight: $font-regular;
-            font-size: 1.375rem;
-            width: 85%;
-            margin: 1.5rem auto
-    
-        }
-    }
+    border-radius: 1.5vw;
+    width: 35vw;
+    height: 22vw;
+    padding: 1vw 2vw;
 
     .img_card{
         display: flex;
-        justify-content: space-evenly;
+        flex-direction: row-reverse;
+        justify-content: space-between;
         align-items: center;
-        padding: .5rem 2rem;
-        margin-bottom: 2rem;
+
+
+        img{
+            width: 60%;
+        }
+
+        &_1{
+            margin: 1vw;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2vw;
+            text-align: center;
+
+            h1{
+                font-size: 2vw;
+                font-weight: $font-bold;
+            }
+            p{
+                font-size: 1.4vw;
+                font-weight: $font-semibold;
+            }
+        }
     }
+    .text_card{
+        font-size: 1.2vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .card_service{
+        gap: 3vw;
+        border-radius: 3vw;
+        width: 85vw;
+        height: 55vw;
+        padding: 3vw 3vw;
     
+        .img_card{
+    
+    
+            img{
+                width: 25%;
+            }
+    
+            &_1{
+                margin: 1vw;
+                gap: 3vw;
+    
+                h1{
+                    font-size: 5vw;
+                }
+                p{
+                    font-size: 3.8vw;
+                }
+            }
+        }
+        .text_card{
+            text-align: center;
+            font-size: 3.3vw;
+        }
+    }
 }
