@@ -1,103 +1,108 @@
 @use '../../styles/var' as *;
 
-.services_page{
-    padding-top: 9vw;
+.services_page {
+  padding-top: 10vw;
 }
 
-
 .services_banner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 2.375rem 2rem;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2.375rem 2rem;
+  text-align: center;
 
-    & h1 {
-        font-size: 1.5rem;
-        font-weight: $font-bold;
-        margin-bottom: 2rem;
-    }
+  h1 {
+    font-size: 1.5rem;
+    font-weight: $font-bold;
+    margin-bottom: 2rem;
+  }
 
-    & p {
-        font-size: 0.875rem;
-    }
+  p {
+    font-size: 0.875rem;
+  }
 }
 
 .services_cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 6.25rem;
-
-    @media (min-width: 768px) {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 6.25rem;
 }
 
 .card_service {
-    width: 100%;
-    margin: 1rem;
-
-    @media (min-width: 768px) {
-        width: calc(50% - 2rem);
-    }
+  width: 100%;
+  margin: 1rem;
 }
 
 .services_footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 2.375rem 2rem;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2.375rem 2rem;
+  text-align: center;
 
-    & h2 {
-        font-size: 1.875rem;
-        font-weight: $font-bold;
-        margin-bottom: 2rem;
-    }
+  h2 {
+    font-size: 1.875rem;
+    font-weight: $font-bold;
+    margin-bottom: 2rem;
+  }
 
-    & p {
-        font-size: 1.4375rem;
-        margin-bottom: 2rem;
-    }
+  p {
+    font-size: 1.4375rem;
+    margin-bottom: 2rem;
+  }
 
-    & .botaoEspecial {
-        background-color: $secondaryBlue;
-        border-radius: 1.875rem;
-        color: $primaryFontColor;
-        padding: 1rem;
-    }
+  .botaoEspecial {
+    background-color: $secondaryBlue;
+    border-radius: 1.875rem;
+    color: $primaryFontColor;
+    padding: 1rem;
+  }
 }
 
+/* Media Queries */
 @media (min-width: 768px) {
-    .services_banner {
-        margin: 2.375rem auto;
-        width: 70%;
+  .services_page {
+    padding-top: 20vw;
+  }
 
-        & h1 {
-            font-size: 4.25rem;
-        }
+  .services_banner {
+    margin: 2.375rem auto;
+    width: 70%;
 
-        & p {
-            font-size: 3.5rem;
-        }
+    h1 {
+      font-size: 4.25rem;
     }
 
-    .services_footer {
-        margin: 2.375rem auto;
-        width: 70%;
-
-        & h2 {
-            font-size: 3.75rem;
-        }
-
-        & p {
-            font-size: 3.0rem;
-        }
+    p {
+      font-size: 3.5rem;
     }
+  }
+
+  .services_cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .card_service {
+    width: 30%; /* Ajuste para mostrar 3 cards por linha */
+    margin: 1rem;
+  }
+
+  .services_footer {
+    margin: 2.375rem auto;
+    width: 70%;
+
+    h2 {
+      font-size: 3.75rem;
+    }
+
+    p {
+      font-size: 3rem;
+    }
+  }
 }
