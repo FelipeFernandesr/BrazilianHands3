@@ -88,7 +88,6 @@ const contactForm = () => {
   return (
     
     <section className='Team'>
-      <h1>schedule your service</h1>
       <form onSubmit={onSubmit}>
         <div className='Team_Group'>
           <div className='Team_Group_Contact'>

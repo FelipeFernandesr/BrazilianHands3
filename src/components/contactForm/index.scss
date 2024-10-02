@@ -1,26 +1,7 @@
 @use '../../styles/var' as *;
-body {
-    background-image: url(../../assets/houses.png);
-    background-size:contain;
-    background-position: absolute;
-    background-blend-mode:darken;
-    
-    
-}
 .Team {
     
-    
-   
     width: 10px;
-    h1 {
-        text-align: center;
-        font-size: 60px;
-        text-decoration: underline;
-        font-weight: 600;
-        color:#02373b;
-        padding-top: 120px;
-        font-display:inherit;
-    }
     
 
     form {
@@ -56,7 +37,6 @@ body {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
-        background-color: rgba(0, 0, 0, 0.7);
         border-radius: 10px;
         padding: 25px;
 
@@ -65,7 +45,7 @@ body {
             font-size: 2vw;
             font-weight: $font-regular;
             margin-bottom: 1.5vw;
-            color: white;
+            color: $secondaryFontColor;
                
         }
 
