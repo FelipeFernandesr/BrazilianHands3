@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // Importando useNavigate
 import * as yup from 'yup';
 import './index.scss';
 
@@ -27,9 +27,9 @@ const TeamForm = () => {
     Complement: '',
     Services: '',
   });
-  
-  
+
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate(); // Hook de navegação
 
   const onInputChange = (e) => {
     const { name, value } = e.target;
@@ -57,12 +57,12 @@ const TeamForm = () => {
     const isValid = await validate();
     if (isValid) {
       try {
-        const response = await fetch('https://backendbhcdnc.onrender.com/api/form', { // Modificado aqui
+        const response = await fetch('https://backendbhcdnc.onrender.com/api/form', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),
         });
-  
+
         if (response.ok) {
           alert('Form submitted successfully');
           setFormData({
@@ -75,12 +75,11 @@ const TeamForm = () => {
             Complement: '',
             Services: '',
           });
+          navigate('/rt'); // Redireciona após a submissão bem-sucedida
         } else {
-          alert('Error adding form data to the server');
           alert('Error adding form data to the server');
         }
       } catch (error) {
-        alert('Error adding form data to the server');
         alert('Error adding form data to the server');
       }
     }
@@ -95,7 +94,6 @@ const TeamForm = () => {
             <div>
               <input
                 className='_Group_Contact_i'
-                className='_Group_Contact_i'
                 type='text'
                 id='Contact'
                 name='Contact'
@@ -105,12 +103,12 @@ const TeamForm = () => {
               {errors.Contact && <p className='error'>{errors.Contact}</p>}
             </div>
           </div>
+
           <div className='Team_Group_Email'>
             <label htmlFor='Email'>Email</label>
             <div>
               <input
                 type='email'
-                id='Email'
                 id='Email'
                 name='Email'
                 value={formData.Email}
@@ -119,6 +117,7 @@ const TeamForm = () => {
               {errors.Email && <p className='error'>{errors.Email}</p>}
             </div>
           </div>
+
           <div className='Team_Group_Phone'>
             <label htmlFor='Phone'>Phone</label>
             <div>
@@ -132,6 +131,7 @@ const TeamForm = () => {
               {errors.Phone && <p className='error'>{errors.Phone}</p>}
             </div>
           </div>
+
           <div className='Team_Group_Eircode'>
             <label htmlFor='Eircode'>Eircode</label>
             <div>
@@ -145,6 +145,7 @@ const TeamForm = () => {
               {errors.Eircode && <p className='error'>{errors.Eircode}</p>}
             </div>
           </div>
+
           <div className='Team_Group_Address'>
             <label htmlFor='Address'>Address</label>
             <div>
@@ -158,6 +159,7 @@ const TeamForm = () => {
               {errors.Address && <p className='error'>{errors.Address}</p>}
             </div>
           </div>
+
           <div className='Team_Group_Number'>
             <label htmlFor='AddressNumber'>Number</label>
             <div>
@@ -171,9 +173,9 @@ const TeamForm = () => {
               {errors.AddressNumber && <p className='error'>{errors.AddressNumber}</p>}
             </div>
           </div>
+
           <div className='Team_Group_Complement'>
             <label htmlFor='Complement'>Complement</label>
-            <div>
             <div>
               <input
                 type='text'
@@ -184,9 +186,9 @@ const TeamForm = () => {
               />
             </div>
           </div>
+
           <div className='Team_Group_Services'>
             <label htmlFor='Services'>Services</label>
-            <div>
             <div>
               <input
                 type='text'
@@ -198,13 +200,12 @@ const TeamForm = () => {
               {errors.Services && <p className='error'>{errors.Services}</p>}
             </div>
           </div>
+
+          <button type="submit">Submit my request</button>
         </div>
-        <button type="submit"><Link to='/rt'/>Submit my request</button>
       </form>
     </section>
   );
 };
 
 export default TeamForm;
-
-
