@@ -28,6 +28,7 @@ const TeamForm = () => {
     Services: '',
   });
   
+  
   const [errors, setErrors] = useState({});
 
   const onInputChange = (e) => {
@@ -76,8 +77,10 @@ const TeamForm = () => {
           });
         } else {
           alert('Error adding form data to the server');
+          alert('Error adding form data to the server');
         }
       } catch (error) {
+        alert('Error adding form data to the server');
         alert('Error adding form data to the server');
       }
     }
@@ -91,6 +94,7 @@ const TeamForm = () => {
             <label htmlFor='Contact'>Contact</label>
             <div>
               <input
+                className='_Group_Contact_i'
                 className='_Group_Contact_i'
                 type='text'
                 id='Contact'
@@ -106,6 +110,7 @@ const TeamForm = () => {
             <div>
               <input
                 type='email'
+                id='Email'
                 id='Email'
                 name='Email'
                 value={formData.Email}
@@ -169,6 +174,7 @@ const TeamForm = () => {
           <div className='Team_Group_Complement'>
             <label htmlFor='Complement'>Complement</label>
             <div>
+            <div>
               <input
                 type='text'
                 id='Complement'
@@ -180,6 +186,7 @@ const TeamForm = () => {
           </div>
           <div className='Team_Group_Services'>
             <label htmlFor='Services'>Services</label>
+            <div>
             <div>
               <input
                 type='text'
@@ -199,3 +206,5 @@ const TeamForm = () => {
 };
 
 export default TeamForm;
+
+
