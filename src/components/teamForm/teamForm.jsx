@@ -56,25 +56,24 @@ const TeamForm = () => {
     const isValid = await validate();
     if (isValid) {
       try {
-        const response = await fetch('https://backendbhcdnc.onrender.com/api/form', {
+        const response = await fetch('https://backendbhcdnc.onrender.com/api/form', { // Modificado aqui
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(formData),
         });
-
+  
         if (response.ok) {
           alert('Form submitted successfully');
           setFormData({
-            contact: '',
-            email: '',
-            phone: '',
-            eircode: '',
-            address: '',
-            addressNumber: '',
-            complement: '',
-            services: '',
+            Contact: '',
+            Email: '',
+            Phone: '',
+            Eircode: '',
+            Address: '',
+            AddressNumber: '',
+            Complement: '',
+            Services: '',
           });
-          navigate('/rt'); // Redireciona após o sucesso
         } else {
           alert('Error adding form data to the server');
         }
