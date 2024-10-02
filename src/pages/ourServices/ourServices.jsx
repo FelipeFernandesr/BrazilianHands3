@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.scss';
+import NavBar from '../../components/navBar/navBar.jsx'
 import CardService from '../../components/cardService/cardService.jsx';
 import NavBar from '../../components/navBar/navBar.jsx';
 

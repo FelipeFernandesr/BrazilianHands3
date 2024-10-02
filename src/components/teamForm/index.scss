@@ -1,5 +1,13 @@
 @use '../../styles/var' as *;
 
+.text-JoinOurTeam {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2.375rem 2rem;
+    text-align: center;
+}
 .Team {
     width: 70vw;
     margin-left: 15vw;

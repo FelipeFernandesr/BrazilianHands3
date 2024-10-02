@@ -8,6 +8,10 @@ const JoinOurTeam = () => {
   return (
     <div>
         <NavBar/>
+
+        <section className='container'>
+        </section>
+        
         <TeamForm/>
 
     </div>
