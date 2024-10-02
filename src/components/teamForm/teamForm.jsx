@@ -200,7 +200,6 @@ const TeamForm = () => {
               {errors.Services && <p className='error'>{errors.Services}</p>}
             </div>
           </div>
-
           <button type="submit">Submit my request</button>
         </div>
       </form>
